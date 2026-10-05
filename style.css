@@ -31,8 +31,6 @@ body{
 .menulist{
   font-size: 14.8235px;
 }
-.dropdown { display: block; }
-.nav-second.open .dropdown { display: block; visibility: visible; }
 /* nav-links */
 /* .nav-container{
   top: 50px;
@@ -107,12 +105,11 @@ body{
   transform:translateY(-8px);
   transition:all 0.2s ease;
 }
-/* .plat:hover  */
-/* .all-plat{
+.plat:hover .all-plat{
   opacity:1;
   visibility:visible;
   transform:translateY(0);
-} */
+}
 .head{
   font-size: 19px;
   color: #A4A4A4;
@@ -188,7 +185,6 @@ body{
 
 .solu{
   position: static; /* same as .plat context, dropdown is full-width */
-  width: min-content;
 }
 
 .all-solu{
