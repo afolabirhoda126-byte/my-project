@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in/Webflowclone</title>
+
+    <link rel="shortcut icon" href="./webflow images/log -n-small.png" type="image/x-icon">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+
+<body>
+
+
+    <div class="body-a">
+
+        <div class="left">
+            <div class="left-visual">
+                <img id="slide-img" src="https://cdn.prod.website-files.com/687e8d1b96312cc631cafec7/6a97402feb3d0419e697c4d9_Everything%20we%20launched%20at%20Webflow%20Conf.jpg" alt="">
+            </div>
+            <div class="eyebrow-d" id="slide-eyebrow">Webflow Conf '26</div>
+            <h1 id="slide-title">The biggest announcements from Webflow Conf 2026</h1>
+            <p id="slide-desc">A recap of our biggest product announcements so far, including the all-new Source, by Webflow.</p>
+            <a href="#" class="btn-dark" id="slide-btn">Learn more</a>
+            
+
+            <div class="carousel-dots">
+                <div class="dot active" data-i="0"></div>
+                <div class="dot" data-i="1"></div>
+                <div class="dot" data-i="2"></div>
+                <div style="margin-left:auto;display:flex;gap:8px">
+                    <button class="btn-dark" id="prevBtn" style="padding:8px 12px">‹</button>
+                    <button class="btn-dark" id="nextBtn" style="padding:8px 12px">›</button>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- <div class="left">
+            <div class="carousel-viewport" style="overflow:hidden; width:100%;">
+                <div id="track" style="display:flex; transition:transform 0.6s ease; width:100%;">
+    
+                    <div class="slide" style="flex:0 0 100%; min-width:100%; box-sizing:border-box;">
+                        <div style="width:100%;flex-shrink:0;padding-right:0,">
+                            <div style="background:#111;border:1px solid #222;border-radius:16px;height:52vh;min-height:380px;overflow:hidden;margin-bottom:32px">
+                                <img src="https://cdn.prod.website-files.com/687e8d1b96312cc631cafec7/6a97402feb3d0419e697c4d9_Everything%20we%20launched%20at%20Webflow%20Conf.jpg" style="width:100%;height:100%;object-fit:cover">
+                            </div>
+                            <div class="eyebrow-d">Webflow Conf '26</div>
+                            <h1>The biggest announcements from Webflow Conf 2026</h1>
+                            <p>A recap of our biggest product announcements so far, including the all-new Source, by Webflow.</p>
+                            <a href="#" class="btn-dark">Learn more</a>
+                        </div>      
+                    </div>
+
+                    <div class="slide" style="flex:0 0 100%; min-width:100%; box-sizing:border-box;">
+                        <div style="width:100%;flex-shrink:0">
+                            <div style="background:#111;border:1px solid #222;border-radius:16px;height:52vh;min-height:380px;overflow:hidden;margin-bottom:32px">
+                                <img src="https://cdn.prod.website-files.com/687e8d1b96312cc631cafec7/6a9740d031c3088ee4087181_Builder%20keynote%20summary.jpg" style="width:100%;height:100%;object-fit:cover">
+                            </div>
+                            <div class="eyebrow-d">Webflow Conf '26</div>
+                            <h1>The biggest announcements from Webflow Conf 2026</h1>
+                            <p>A recap of our biggest product announcements...</p>
+                            <a href="#" class="btn-dark">Read the recap</a>
+                        </div>      
+                    </div>
+
+                    <div class="slide" style="flex:0 0 100%; min-width:100%; box-sizing:border-box;">
+                        <div style="width:100%;flex-shrink:0">
+                            <div style="background:#111;border:1px solid #222;border-radius:16px;height:52vh;min-height:380px;overflow:hidden;margin-bottom:32px">
+                                <img src="https://cdn.prod.website-files.com/687e8d1b96312cc631cafec7/6a97408a2fe1948c30ac9c6e_Source%20Blog%20Thumbnail%20(Source%20Blog).jpg" style="width:100%;height:100%;object-fit:cover">
+                            </div>
+                            <div class="eyebrow-d">Webflow Conf '26</div>
+                            <h1>For the builders</h1>
+                            <p>A roundup of what's new...</p>
+                            <a href="#" class="btn-dark">Read the recap</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-dots">
+                <div class="dot active" data-i="0"></div>
+                <div class="dot" data-i="1"></div>
+                <div class="dot" data-i="2"></div>
+                <div style="margin-left:auto;display:flex;gap:8px">
+                    <button class="btn-dark" id="prevBtn">‹</button>
+                    <button class="btn-dark" id="nextBtn">›</button>
+                </div>
+            </div>
+        </div> -->
+
+
+
+        <div class="right">
+            <div class="form-wrap">
+                <div class="logo-z">
+                    <div class="logo-mark">
+                        <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/webflow-icon.png" alt="" width="28px">Webflow
+                    </div>
+                </div>
+                <h2>Log in to your account</h2>
+
+                <button class="sso-btn">Continue with Google <span style="margin-left:auto">G</span></button>
+                <button class="sso-btn">Continue with Github</button>
+                <button class="sso-btn">Continue with SSO</button>
+
+                <div class="divider">or</div>
+
+                <label>Email address or username</label>
+                <input type="text" placeholder="">
+                <div class="pass-row">
+                    <label>Password</label>
+                    <a href="#" class="forgot">Forgot your password?</a>
+                </div>
+                <input type="password" placeholder="">
+
+                <button class="submit">Continue</button>
+                <div class="signup">Don't have an account?
+                    <a href="#">Sign up</a>
+                </div>
+            </div>
+        </div>    
+    </div> 
+    
+    <script>
+let current = 0;
+const track = document.getElementById('track');
+const dots = document.querySelectorAll('.dot');
+const total = 3;
+
+function showSlide(i){
+  current = (i + total) % total;
+  track.style.transform = `translateX(-${current * 100}%)`;
+  dots.forEach((d, idx) => d.classList.toggle('active', idx === current));
+}
+
+document.getElementById('nextBtn').addEventListener('click', () => showSlide(current + 1));
+document.getElementById('prevBtn').addEventListener('click', () => showSlide(current - 1));
+dots.forEach(d => d.addEventListener('click', () => showSlide(parseInt(d.dataset.i))));
+
+setInterval(() => showSlide(current + 1), 6000);
+    </script>
+</body>
+</html>

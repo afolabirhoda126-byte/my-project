@@ -41,7 +41,7 @@
 
                     <div class="plat">
                         <a href="#" class="menu-list">Platform</a>                        
-                        <div class="all-plat">
+                        <div class="dropdown all-plat">
 
                             <div>
                                 <h4 class="head">Build</h4>
@@ -106,7 +106,7 @@
 
                     <div class="solu">
                         <a href="#" class="menu-list">Solutions</a>
-                        <div class="all-solu">
+                        <div class="dropdown all-solu">
 
                             <div class="solu-1">
                                 <h4 class="head">Marketing</h4>
@@ -161,7 +161,7 @@
 
                     <div class="reso"> 
                         <a href="#" class="menu-list">Resources</a>
-                        <div class="all-reso">
+                        <div class="dropdown all-reso">
                             <div>
                                 <h4 class="head">Get started</h4>
                                 <ul>
@@ -211,7 +211,7 @@
                 <div class="nav-third">
                     <div class="nav-end">
 
-                        <a href="#" class="end-1">Log in</a>
+                        <a href="./login.html" class="end-1">Log in</a>
                     </div>
                     <div class="nav-end-2">
                         <a href="#" class="end-1">Contact Sales</a>
@@ -881,6 +881,28 @@
             </div>
         </div>
     </footer>
+
+    <script>
+  const navItems = document.querySelectorAll('.nav-second');
+
+  navItems.forEach(item => {
+    const link = item.querySelector('a');
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      
+      const isOpen = item.classList.contains('open');
+      navItems.forEach(i => i.classList.remove('open'));
+      
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav-second')) {
+      navItems.forEach(i => i.classList.remove('open'));
+    }
+  });
+    </script>
 
 
     <script>
