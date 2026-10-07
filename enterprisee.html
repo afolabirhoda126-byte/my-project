@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Webflow Enterprise</title>
+    <link rel="shortcut icon" href="./webflow images/log -n-small.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./enterprisee.css">
+
+</head>
+<body>
+<script>
+/* =====================================================================
+   PUT YOUR IMAGE LINKS HERE  (this is the only place you need to edit)
+   - Paste each link between the quotes:  "https://your-site.com/photo.jpg"
+   - Leave "" to keep the placeholder colour/shape for that spot.
+   - .mp4 / .webm links also work (they play as a silent looping video).
+   - Order is left → right, top → bottom, as it appears on the page.
+   ===================================================================== */
+window.IMG = {
+  // Hero: the 2 photos under "See how enterprises achieve a 332% ROI"   [left, right]
+  hero: ["https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/68d6dc890bcbd955dc3f9c0a_d25d48850b61554fb4f25f3b14f1d9b5_entperise-hero_abm.avif", "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/68d6ddb9988f68493e7ae69b_ecb477f05859315ea8abdb603763b6dd_entperise-hero_abm-laptop.avif"],
+
+//   Logo strip under the hero (optional). One link per logo, in order. Leave [] to keep the text logos.
+  logos: ["https://dhygzobemt712.cloudfront.net/Web/logos/light/dropbox.svg", "https://dhygzobemt712.cloudfront.net/Web/logos/light/greenhouse.svg", "https://dhygzobemt712.cloudfront.net/Web/logos/light/clear.svg", "https://dhygzobemt712.cloudfront.net/Web/logos/light/orangetheory.svg", "https://dhygzobemt712.cloudfront.net/Web/logos/light/checkout.svg", "https://dhygzobemt712.cloudfront.net/Web/logos/light/soundcloud.svg", "https://dhygzobemt712.cloudfront.net/Web/logos/light/walker-dunlop.svg", "https://dhygzobemt712.cloudfront.net/Web/logos/light/reddit.svg", "https://dhygzobemt712.cloudfront.net/Web/logos/light/docusign.svg", "https://dhygzobemt712.cloudfront.net/Web/logos/light/ncr.svg", "https://dhygzobemt712.cloudfront.net/Web/logos/light/abm.svg", "https://dhygzobemt712.cloudfront.net/Web/logos/light/the-new-york-times.svg", "https://dhygzobemt712.cloudfront.net/Web/logos/light/spotify.svg", "https://dhygzobemt712.cloudfront.net/Web/logos/light/ted.svg", "https://dhygzobemt712.cloudfront.net/Web/logos/light/monday.svg", "https://dhygzobemt712.cloudfront.net/Web/logos/light/ideo.svg", "https://dhygzobemt712.cloudfront.net/Web/logos/light/upwork.svg", "https://dhygzobemt712.cloudfront.net/Web/logos/light/discord.svg", "https://dhygzobemt712.cloudfront.net/Web/logos/light/lattice.svg", "https://dhygzobemt712.cloudfront.net/Web/logos/light/verifone.svg"],
+
+  // "The platform for modern ___ teams": 3 cards per tab   [left, middle, right]
+  platform: {
+    marketing:   ["https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/68b8765bf6a6c347e70f6c6e_enterprise_marketing_card-1.webp", "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/68b88261f8c7c21aba34b5c6_enterprise_marketing_card-2.webp", "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/68b882f910d563e95ccbda5a_e83cb76fa89d1fcaacab9786e3a2d693_enterprise_marketing_card-3.webp"],
+    design:      ["https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/68b883d9dc8b722410a21899_35c37d9b7605946a74dd948cea46fbb9_enterprise_creative_card-1.webp", "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/68b883d9f033b2ef7b05badc_enterprise_creative_card-2.webp", "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/68b883d94fca1911faa29707_eae8df813c11aed3db047feb0d3b2e16_enterprise_creative_card-3.webp"],
+    engineering: ["https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/68b8855e1ac1da05909b7796_enterprise_engineering_card-1.webp", "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/68b8855e8a688214e05a36d9_enterprise_engineering_card-2.webp", "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/68b8855ed7163b0079beed4b_enterprise_engineering_card-3.webp"],
+    agencies:    ["https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/68b8a2751f8d3ed2d425eb1b_platform_collaboration_tab-bg.webp", "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/68b85fc5f9848b1ef479189b_b6c48110dc5dcde22344aaa2f70d2686_cms_agencies_asset-2.webp", "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/68b75833e49e173f396eefb4_c2c9b544f4db157064a4bb9deaf6b903_cms_scale_tab-4.webp"]
+  },
+
+  // "Managed hosting & security": big image for each of the 3 accordion items
+  hosting: ["https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/68b87db9ab811d813f823b25_enterprise_hosting_card-1.webp", "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/68b87db8d9bdd8c981926722_enterprise_hosting_card-2.webp", "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/68b87db8e170e1ddf8f39cfb_fda970d9f686ef7f02c51e89d46dcf35_enterprise_hosting_card-3.webp"],
+
+  // "Extensibility": big image for each of the 3 accordion items
+  extensibility: ["https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/68b87fac5bb1c6e06c5084d2_f333d5bdf286abdf3b7aff0def0fdf04_enterprise_extensibility_card-1.webp", "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/68b87facf5cfd8af13c4790e_4da0cb8a847f0c874ddbd833740800d0_enterprise_extensibility_card-2.webp", "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/68b87facb3f9ea60d54bebe3_56a8d578a97c8d7f810f537c5dac5fb0_enterprise_extensibility_card-3.webp"],
+
+  // "300,000 powerful brands": 7 cards (Verifone, Lattice, Orangetheory, Fivetran, Walker & Dunlop, NCR Voyix, Docusign)
+  brands: ["https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/696fe69ed48d51a111c2baa2_customer-stories_verifone.avif", "https://cdn.prod.website-files.com/687e8d1b96312cc631cafec7/68b065e3cee20f75820054b6_feature-image-lattice.webp", "https://cdn.prod.website-files.com/687e8d1b96312cc631cafec7/68b9969033c7fa0eb2c29c2f_feature-image-orangetheory.webp", "https://cdn.prod.website-files.com/687e8d1b96312cc631cafec7/68b065e3cee20f75820054a0_feature-image-fivetran.webp", "https://cdn.prod.website-files.com/687e8d1b96312cc631cafec7/68b065e3cee20f75820054b9_feature-image-walkerdunlop.webp", "https://cdn.prod.website-files.com/687e8d1b96312cc631cafec7/68c03e9869a6a5a0803845db_NCR-optimized.webp", "https://cdn.prod.website-files.com/687e8d1b96312cc631cafec7/68bf1a67e66e34b3ddf5712e_author_carla-weis.webp"],
+
+  // The 2 cards: "See the business impact…" and "Webflow in action"   [left, right]
+  promo: ["https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/695e887fc945b678052de100_verifone.avif", "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/68949e086d62de50b6f450a1_cta-image.avif"],
+
+  // "The future of the web is yours to build": 7 cards
+  resources: ["https://cdn.prod.website-files.com/687e8d1b96312cc631cafec7/6a7b5719f59f824147d0244d_Type%3DGeneral%2C%20Sub-type%3DNone%2C%20Dimensions%3D16x9.jpg", "https://cdn.prod.website-files.com/687e8d1b96312cc631cafec7/6a84a105ad2fd7fde30e4d73_Type%3DGeneral%2C%20Sub-type%3DNone%2C%20Dimensions%3D16x9.png", "https://cdn.prod.website-files.com/687e8d1b96312cc631cafec7/6a8dd3e23dfd173fdcfc8b49_Thumbnail-selection.png", "https://cdn.prod.website-files.com/687e8d1b96312cc631cafec7/6a6045f50be7aec8e39dd54b_Type%3DGeneral%2C%20Sub-type%3DNone%2C%20Dimensions%3D16x9.jpg", "https://cdn.prod.website-files.com/687e8d1b96312cc631cafec7/6a593b0fba4beb103f481d0c_ebook-thumbnail_ai-discovery-playbook.jpg", "https://cdn.prod.website-files.com/687e8d1b96312cc631cafec7/69f391433a2f81395bbbca4f_Type%3DGeneral%2C%20Sub-type%3DNone%2C%20Dimensions%3D16x9.jpg", "https://cdn.prod.website-files.com/687e8d1b96312cc631cafec7/6a2058bbf6f44d5c917419c2_Type%3DGeneral%2C%20Sub-type%3DNone%2C%20Dimensions%3D16x9.png"],
+
+  // "Get a demo": 5 website screenshots (Lattice, Walker & Dunlop, Ramp, Docusign, Orangetheory)
+  demo: ["https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/68b854486356004056513a9a_ea808fc9bc751aae4b1cfde3634e1144_interactions-hero-03.avif", "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/68d694918e02e5dcb77a832b_miw-site_walker-dunlop.avif", "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/68d69490cd3566426dcdb55f_miw-site_ramp.avif", "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/68d6962305367651e38ad105_miw-site_docusign-brand.avif", "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/68d69491231ccd6f43a6d2e7_miw-site_orange-theory.avif"],
+
+  // Big blue W in the footer (shows on hover): 5 images or short videos
+  footerW: ["https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/68b89b6bc974abdca78db913_interactions_miw-slider_cloneable-asset_08.webp", "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/68b9a05cd703a66b0e92c61d_design_miw_sites_02.avif", "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/68b8544804f09c2ea80de421_d9be4457075c7b43f46648f9470ebe50_interactions-hero-09.avif", "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/68b9a05cc4e511863b3de078_design_miw_sites_04.avif", "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/68b8544827ddb0ac640381e8_2f37143fccefde0915d24c72a5a15da7_interactions-hero-05.avif"]
+};
+</script>
+
+<!-- ===== SECTION: banner + nav + hero + logo marquee ===== -->
+<div class="banner">Introducing MCP 2.0: Build, govern, and analyze your sites inside your existing AI workflows. Read the announcement →</div>
+
+    <nav>
+        <div class="wrap">
+            <div class="l">
+                <a class="logo" href="./webflow images/webflow.logo.png"></a>Webflow
+
+ <span class="nav-links l"><a href="#" data-m="platform">Platform</a><a href="./source.html">Source</a><a href="#" data-m="solutions">Solutions</a><a href="#" data-m="resources">Resources</a><a href="./index.html">Enterprise</a><a href="#">Pricing</a></span></div>
+ <div class="r"><a class="hide-s" href="#">Log in</a><a class="hide-s" href="#">Contact Sales</a><a class="btn" href="#">Start for free</a></div>
+</div><div class="mg" id="mg"></div></nav><div class="scrim" id="scrim"></div>
+
+<main class="wrap">
+ <section class="hero">
+  <div>
+   <div class="eyebrow">Webflow Enterprise</div>
+   <h1>See how enterprises achieve a 332% ROI with Webflow</h1>
+   <div class="pts">
+    <p><b>Design and build.</b> Scale delivery with visual development, design systems, and reusable components that keep teams aligned and reduce brand and delivery risk.</p>
+    <p><b>Publish and manage.</b> Empower more teams to create and update content with built-in governance, workflows, and permissions—so speed never comes at the cost of control.</p>
+    <p><b>Analyze and optimize.</b> Drive measurable growth on a unified, extensible platform with native experimentation, personalization, SEO/AEO, and localization.</p>
+   </div>
+   <div class="pics">
+    <!-- swap these placeholders for <img src="your-photo.jpg" alt=""> -->
+    <div class="pic p1"><div class="m"></div><div class="f"></div><div class="tb"></div></div>
+    <div class="pic p2"><div class="scr"></div><div class="base"></div><div class="mug"></div></div>
+   </div>
+  </div>
+
+  <form class="card" onsubmit="return false">
+   <h2>Contact sales</h2>
+   <div class="grid">
+    <div><label for="em">Business email*</label><input id="em" type="email" placeholder="Enter your email" required></div>
+    <div><label for="cs">Company size*</label><select id="cs" required><option value="" disabled selected>Select...</option><option>1–50</option><option>51–200</option><option>201–1,000</option><option>1,001–5,000</option><option>5,000+</option></select></div>
+    <div><label for="sp">How can we support you?*</label><select id="sp" required><option value="" disabled selected>Select...</option><option>I want to talk to sales</option><option>I need help with my account</option><option>Something else</option></select></div>
+    <div><label for="fn">First name*</label><input id="fn" placeholder="Enter your first name" required></div>
+    <div><label for="ln">Last name*</label><input id="ln" placeholder="Enter your last name" required></div>
+    <div><label for="co">Company*</label><input id="co" placeholder="Where do you work?" required></div>
+    <div><label for="ti">Title*</label><input id="ti" placeholder="What is your job title?" required></div>
+    <div><label for="ct">Country*</label><select id="ct" required><option>United States</option><option>Canada</option><option>United Kingdom</option><option>Nigeria</option><option>Germany</option><option>France</option><option>India</option><option>Australia</option></select></div>
+    <div class="full"><label for="ph">Phone number</label><input id="ph" type="tel" placeholder="Enter your phone number"></div>
+   </div>
+   <button class="btn" type="submit">Talk to us</button>
+   <p class="fine">By submitting this form, you agree to Webflow's <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+  </form>
+ </section>
+</main>
+
+<div class="marq" aria-label="Customer logos">
+ <div class="track" id="track">
+  <span>Dropbox</span><span>greenhouse</span><span>CLEAR</span><span>Checkout.com</span><span>SoundCloud</span><span class="wd">WALKER &amp; DUNLOP</span><span>reddit</span><span>docusign</span><span class="abm">ABM</span><span class="nyt">The New York Times</span><span class="ideo">IDEO</span><span class="up">upwork</span><span>Discord</span><span>Lattice</span><span style="font-weight:500">verifone</span><span class="ideo">NCR VOYIX</span><span>monday.com</span><span>Spotify</span>
+ </div>
+</div>
+
+<section class="pf wrap" id="pf" data-t="marketing">
+ <h2><span>The platform for modern</span>
+  <span class="pf-sel">
+   <button class="pf-btn" id="pfBtn" aria-haspopup="listbox" aria-expanded="false"><em id="pfLabel" style="font-style:normal">marketing teams</em>
+    <svg viewBox="0 0 12 8" fill="none" stroke="#fff" stroke-width="1.8"><path d="m1 1.500 5 5 5-5"/></svg></button>
+   <ul class="pf-menu" id="pfMenu" role="listbox">
+    <li role="option" data-k="marketing" aria-selected="true">Marketing teams</li>
+    <li role="option" data-k="design">Design teams</li>
+    <li role="option" data-k="engineering">Engineering teams</li>
+    <li role="option" data-k="agencies">Agencies</li>
+   </ul>
+  </span>
+ </h2>
+ <p class="pf-lead pf-fade" id="pfLead"></p>
+
+ <div class="pf-grid pf-fade">
+  <article class="pf-cap"><div class="pf-v pf-v1"><div class="pf-fig"></div></div><h3 id="pfT1"></h3><p id="pfB1"></p></article>
+  <article class="pf-cap"><div class="pf-v pf-v2"><div class="pf-w" id="pfW"></div>
+    <div class="pf-ui"><div class="pf-bar"><b>Home</b><b>Variation 1</b><b>Variation 2</b></div><i></i><i></i><i></i><i></i></div></div><h3 id="pfT2"></h3><p id="pfB2"></p></article>
+  <article class="pf-cap"><div class="pf-v pf-v3"><div class="pf-ui"><div class="pf-bar"><b>Share</b><b style="background:#3a3a3f">Publish</b></div><i></i><i></i><i></i><i></i><i></i><i></i></div></div><h3 id="pfT3"></h3><p id="pfB3"></p></article>
+ </div>
+</section>
+
+
+<!-- ===== SECTION: Managed hosting & security ===== -->
+<section class="hs" id="hosting"><div class="wrap">
+ <div>
+  <h2>Managed<br>hosting &amp; security</h2>
+  <p class="sub">Scale confidently with fully-managed hosting including world-class security, performance, and reliability.</p>
+  <a class="btn" href="#">Talk to a hosting expert</a>
+  <div class="acc">
+   <div class="it on"><i class="bar"></i><div class="t">Focus on building, not maintenance</div><div class="bd"><div><p>Ensure site stability with SLAs for both hosting and application uptime, backed by Webflow’s fully managed infrastructure.</p><a href="#">Discover hosting →</a></div></div></div>
+   <div class="it"><i class="bar"></i><div class="t">Align security with enterprise standards</div><div class="bd"><div><p>Configure custom SSL certificates, security headers, and access controls to meet your organization’s standards and stay compliant.</p><a href="#">Explore the Trust Center →</a></div></div></div>
+   <div class="it"><i class="bar"></i><div class="t">Built for risk-aware teams</div><div class="bd"><div><p>Satisfy security reviews with access to Webflow’s Enterprise Whistic profile, plus defined incident response SLAs and a clear escalation path — ensuring you’re covered when it matters most.</p></div></div></div>
+  </div>
+ </div>
+ <div class="media" id="media"><div class="ly a1 on"><div class="sc">
+   <div class="glow"></div>
+   <div class="dc lh">GOOGLE LIGHTHOUSE®<div class="ring"></div><b>97</b><span style="position:absolute;bottom:8px;left:0;right:0;font-size:6.500px;letter-spacing:.1em">PERFORMANCE</span></div>
+   <div class="dc ttfb"><div class="ring"></div><b>42</b><i>ms globally</i><span style="left:8px">TIME TO FIRST BYTE</span><span style="right:8px;color:#4ef065">OPTIMAL</span></div>
+   <div class="dc up">UPTIME &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;99.992%</div>
+   <div class="dc as">Assets<div class="g"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+   <div class="dc pub"><b style="font-weight:500">Choose publish destination</b><br>Staging<small>Published a month ago</small>Production<br>☑ Enable SSL<br>☑ Minify HTML<br>☑ Minify CSS<br>☑ Minify JS</div>
+   <div class="radar"></div>
+  </div></div><div class="ly a2"><div class="sc">
+   <div class="shirt"></div>
+   <div class="wc w1"><h6>Security</h6>
+    <div class="row"><span class="tg"></span><em>On</em>Enable HSTS for subdomains</div>
+    <div class="row"><span class="tg"></span><em>On</em>Enable HSTS preload header</div>
+    <div class="row"><span class="tg"></span><em>On</em>Use secure frame headers</div></div>
+   <div class="wc w2"><h6>Performance</h6>
+    <div class="row"><span class="tg off"></span><em>Off</em>Asynchronously load JS</div>
+    <div class="row"><span class="tg"></span><em>On</em>Minify HTML</div>
+    <div class="row"><span class="tg off"></span><em>Off</em>Minify CSS</div>
+    <div class="row"><span class="tg"></span><em>On</em>Minify JS</div>
+    <div class="row"><span class="tg off"></span><em>Off</em>Per page CSS</div></div>
+  </div></div><div class="ly a3"><div class="sc">
+   <div class="win"></div><div class="art"></div>
+   <div class="pl p1"></div><div class="pl p2"></div>
+   <div class="ppl f"></div><div class="ppl m"></div>
+   <div class="ppl mon"></div><div class="desk"></div>
+  </div></div></div>
+</div></section>
+
+
+<!-- ===== SECTION: Extensibility ===== -->
+<section class="hs ex" id="ext"><div class="wrap">
+ <div class="media"><div class="ly xa1 on">Your tech stack, connected</div><div class="ly xa2">Webflow Cloud Projects</div><div class="ly xa3">Code components</div></div>
+ <div>
+  <h2>Extensibility</h2>
+  <p class="sub">Integrate Webflow with your existing tech stack — no matter how complex.</p>
+  <a class="btn" href="#">Get connected</a>
+  <div class="acc">
+   <div class="it on"><i class="bar"></i><div class="t">Connect Webflow to your tech stack</div><div class="bd"><div><p>Seamlessly connect with marketing, data, and operational systems — through native integrations with Marketo, Figma, vetted 3rd-party apps, or custom integrations with robust, MACH-certified APIs.</p></div></div></div>
+   <div class="it"><i class="bar"></i><div class="t">Bring full-stack web apps to your website experience</div><div class="bd"><div><p>Deploy full-stack applications and dynamic web experiences alongside your Webflow site — maintaining brand consistency at scale while eliminating complexity across separate systems and code repositories.</p><a href="#">Discover Webflow Cloud →</a></div></div></div>
+   <div class="it"><i class="bar"></i><div class="t">Extend your design system with code components</div><div class="bd"><div><p>Use developer-built React components directly in Webflow’s canvas to scale bespoke, on-brand UI across sites, campaigns, and markets — increasing efficiency and ensuring brand consistency.</p></div></div></div>
+  </div>
+ </div>
+</div></section>
+
+<!-- ===== SECTION: A platform that powers growth ===== -->
+<section class="gr"><div class="wrap">
+ <div class="top"><div><h2>A platform that powers growth.<br>A partner that supports it.</h2>
+  <p class="lead">From implementation support to in-the-moment troubleshooting, we’re here to help you build, scale, and optimize your digital experiences.</p></div>
+  <div><a class="btn" href="#">Explore Enterprise Success</a></div></div>
+ <div class="feats">
+  <div><div class="ic">◔</div><h3>24/7 tailored customer service</h3><p>Get 24/7 support from a team that understands your needs. Work through any problem with help from a real person, at any time.</p></div>
+  <div><div class="ic">☺</div><h3>A dedicated customer success manager</h3><p>Work with a dedicated customer success manager to meet your business goals and maximize your investment in Webflow Enterprise.</p></div>
+  <div><div class="ic">⌖</div><h3>Solutions architects</h3><p>Consult with a solutions architect to streamline your implementation and get guidance and expertise to scale your use of Webflow Enterprise.</p></div>
+ </div>
+</div></section>
+
+<!-- ===== SECTION: 300,000 powerful brands ===== -->
+<section class="br"><div class="wrap hd2"><h2 class="big">300,000 powerful brands,<br>powered by Webflow</h2><div class="arr" data-for="brT"><button class="ar" aria-label="Previous">←</button><button class="ar" aria-label="Next">→</button></div></div>
+ <div class="trk" id="brT"></div>
+ <p class="cta"><a href="#">Talk to us</a> about how Webflow can unlock impact for your team.</p>
+</section>
+
+<!-- ===== SECTION: FAQ ===== -->
+<section class="fq"><div class="wrap"><h2>Frequently<br>asked questions</h2><div id="faq"></div></div></section>
+
+<!-- ===== SECTION: two promo cards ===== -->
+<section class="pc"><div class="wrap">
+ <div class="cd"><h3>See the business impact of moving to Webflow</h3><p>Use this calculator to estimate the impact of Webflow’s platform on your goals — backed by real-world results.</p><a class="btn" href="#">Use the calculator</a><div class="mk">The Future of Payments is Boundless</div></div>
+ <div class="cd alt"><h3>Webflow in action</h3><p>In this demo video, you’ll learn how to build, manage, and optimize websites that convert.</p><a class="btn" href="#">Explore the product tour</a><div class="mk">Plan a team retreat in Laos</div></div>
+</div></section>
+
+<!-- ===== SECTION: The future of the web ===== -->
+<section class="rs"><div class="wrap hd2"><div><h2 class="big">The future of the web is yours to build</h2><p class="lead">Explore whitepapers, ebooks, and more about creating web experiences that get results with Webflow.</p></div><div class="arr" data-for="rsT"><button class="ar" aria-label="Previous">←</button><button class="ar" aria-label="Next">→</button></div></div>
+ <div class="trk" id="rsT"></div>
+</section>
+
+<!-- ===== SECTION: Get a demo ===== -->
+<section class="dm" id="dm"><div class="dm-bg" id="dmBg"></div><div class="wrap">
+ <h2>Get a demo</h2><p class="lead">Discover what’s possible with Webflow Enterprise.</p>
+ <div class="btns"><a class="btn" href="#">Talk to sales</a><a class="btn dk" href="#">Watch demo video</a></div>
+ <div class="stage" id="stage"></div>
+ <div class="capr"><span id="dmCap"></span><div class="arr"><button class="ar" id="dmPrev" aria-label="Previous">↑</button><button class="ar" id="dmNext" aria-label="Next">↓</button></div></div>
+</div></section>
+
+<!-- ===== SECTION: Footer ===== -->
+<footer class="ft"><div class="wrap"><div class="cols" id="ftCols"></div>
+ <div class="low"><span>© 2026 Webflow, Inc. All rights reserved</span><div class="soc"><a href="#">W</a><a href="#">▶</a><a href="#">X</a><a href="#">f</a><a href="#">in</a><a href="#">◎</a><a href="#">♪</a></div></div></div>
+ <div class="ft-w" id="ftW" aria-label="Webflow"></div>
+</footer>
+
+<a class="badge" href="#">
+        <i>
+            <img src="./webflow images/log -n-small.png" alt="">
+        </i>Made in Webflow
+    </a>
+
+<script>
+// duplicate logos once so the -50% loop is seamless
+var t=document.getElementById('track');t.innerHTML+=t.innerHTML;
+</script>
+<script>
+(function(){
+ var items=[].slice.call(document.querySelectorAll('#hosting .it')),layers=[].slice.call(document.querySelectorAll('#hosting .ly')),m=document.getElementById('media'),cur=0,timer;
+ function fit(){var s=m.clientWidth/428;[].forEach.call(document.querySelectorAll('#hosting .sc'),function(e){e.style.transform='scale('+s+')'})}
+ function go(n){cur=n;items.forEach(function(el,i){var on=i===n;if(on){var b=el.querySelector('.bar');el.classList.remove('on');void b.offsetWidth}el.classList.toggle('on',on)});
+  layers.forEach(function(l,i){l.classList.toggle('on',i===n)});clearTimeout(timer);timer=setTimeout(function(){go((cur+1)%items.length)},7000)}
+ items.forEach(function(el,i){el.addEventListener('click',function(){if(i!==cur)go(i)})});
+ addEventListener('resize',fit);fit();go(0);
+})();
+</script>
+<script>
+(function(){
+ // TODO: card captions for Design / Engineering / Agencies weren't shown in the recording — placeholders below.
+ var D={
+  marketing:{l:'marketing teams',w:'FUEL\n50.0',p:'Webflow Enterprise gives marketing teams the flexibility, security, and reliability they need to scale innovative web experiences that drive growth in the age of AI.',
+   c:[['Move quickly without sacrificing quality or process','Launch on-brand experiences fast. Webflow Enterprise delivers the marketing speed you need with the precision your brand demands.'],
+      ['Turn traffic into revenue','Launch sophisticated web experiments seamlessly with native, AI-powered optimization tools. Webflow Enterprise helps ensure your digital experiences are both SEO/AEO-friendly and optimized for conversion.'],
+      ['Reduce overhead with a single source of truth','Collaborate more effectively by uniting creative, marketing, and dev teams in one platform. With Webflow Enterprise, every team can move faster, together.']]},
+  design:{l:'design teams',w:'',p:'Webflow Enterprise gives creative teams the flexibility, security, and reliability to scale brand-forward experiences in the age of AI — without compromising consistency or creative vision.',
+   c:[['Caption 1 (placeholder)','Placeholder body copy.'],['Caption 2 (placeholder)','Placeholder body copy.'],['Caption 3 (placeholder)','Placeholder body copy.']]},
+  engineering:{l:'engineering teams',w:'',p:'Webflow Enterprise gives engineering teams the control, scalability, and reliability they need to reduce non-core dev work — so they can focus on delivering business-critical value in the age of AI.',
+   c:[['Caption 1 (placeholder)','Placeholder body copy.'],['Caption 2 (placeholder)','Placeholder body copy.'],['Caption 3 (placeholder)','Placeholder body copy.']]},
+  agencies:{l:'agencies',w:'sig',p:'Webflow Enterprise gives agencies the flexibility, control, and scalability they need to deliver high-impact work for the most complex clients.',
+   c:[['Caption 1 (placeholder)','Placeholder body copy.'],['Caption 2 (placeholder)','Placeholder body copy.'],['Caption 3 (placeholder)','Placeholder body copy.']]}
+ };
+ var $=function(i){return document.getElementById(i)},root=$('pf'),btn=$('pfBtn'),menu=$('pfMenu'),opts=[].slice.call(menu.children),cur='marketing';
+ function fill(k){var d=D[k];root.dataset.t=k;window.pfImgs&&window.pfImgs(k);$('pfLabel').textContent=d.l;$('pfLead').textContent=d.p;$('pfW').textContent=d.w;
+  for(var i=0;i<3;i++){$('pfT'+(i+1)).textContent=d.c[i][0];$('pfB'+(i+1)).textContent=d.c[i][1]}
+  opts.forEach(function(o){o.setAttribute('aria-selected',o.dataset.k===k)})}
+ function toggle(open){menu.classList.toggle('open',open);btn.setAttribute('aria-expanded',open)}
+ function pick(k){toggle(false);if(k===cur)return;cur=k;root.classList.add('pf-swap');setTimeout(function(){fill(k);root.classList.remove('pf-swap')},300)}
+ btn.addEventListener('click',function(e){e.stopPropagation();toggle(!menu.classList.contains('open'))});
+ opts.forEach(function(o){o.addEventListener('click',function(){pick(o.dataset.k)})});
+ document.addEventListener('click',function(){toggle(false)});
+ document.addEventListener('keydown',function(e){if(e.key==='Escape')toggle(false)});
+ fill('marketing');
+})();
+</script>
+<script>
+/* ===== data-driven sections: nav menus, brands, faq, resources, demo, footer ===== */
+(function(){
+ var $=function(i){return document.getElementById(i)};
+ // --- tabs for #ext (same behaviour as #hosting)
+ (function(){var root=$('ext'),items=[].slice.call(root.querySelectorAll('.it')),ly=[].slice.call(root.querySelectorAll('.ly')),cur=0,t;
+  function go(n){cur=n;items.forEach(function(el,i){if(i===n){var b=el.querySelector('.bar');el.classList.remove('on');void b.offsetWidth}el.classList.toggle('on',i===n)});ly.forEach(function(l,i){l.classList.toggle('on',i===n)});clearTimeout(t);t=setTimeout(function(){go((cur+1)%items.length)},7000)}
+  items.forEach(function(el,i){el.addEventListener('click',function(){if(i!==cur)go(i)})});go(0)})();
+
+ // --- mega menus
+ var L=function(a){return a.map(function(x){return '<li><a href="#">'+x+'</a></li>'}).join('')},C=function(h,a){return '<div><h5>'+h+'</h5><ul>'+L(a)+'</ul></div>'};
+ var bar='<div class="bar"><span>I’m a <button class="sel">Marketer ⌄</button></span><span>Appearance <i class="ib">☼</i><i class="ib">☾</i><i class="ib on">▭</i></span></div>';
+ var M={
+  platform:C('Build',['Design','Edit content','Interactions','Collaboration','Page building'])+C('Manage',['CMS','Hosting','Localize','Security','Shared Libraries'])+C('Convert',['Analyze','Optimize','SEO','AEO'])+C('Extend',['Apps','Figma to Webflow','Webflow Cloud','DevLink','MCP'])+
+   '<div class="cards"><div class="mc" style="background:linear-gradient(100deg,#146ef5,#0a3fb0)"><b>Platform Overview</b>Explore the power of the Webflow platform</div><div class="mc" style="background:linear-gradient(100deg,#111,#10224a)"><b>Webflow AI</b>Elevate web experiences with the power of AI</div></div>'+bar,
+  solutions:C('Marketing',['Brand','Performance','Digital Experience','Ops'])+C('Engineering',['Engineering leaders','Developers'])+C('Service Providers',['Agencies','Freelancers','Global Alliances'])+
+   '<div class="side"><div class="mc" style="background:linear-gradient(135deg,#dfe8ff,#fff);color:#333"><b style="color:#111">Enterprise</b>Advanced collaboration workflows and enterprise-grade scalability.</div><div class="mc" style="background:linear-gradient(135deg,#150a3a,#6a2fd0)"><b>AEO</b>Show up in AI-driven search with the power of Webflow.</div></div>'+bar,
+  resources:C('Get started',['Templates','Made in Webflow','Hire a Certified Partner','Developers'])+C('Learn',['Webflow University','Blog','Webinars & ebooks','The Webflow Way'])+C('Discover',['Customer stories','Our Community','Partner with Webflow','AEO Assessment'])+C('Get help',['Support','Join the Community'])+bar
+ };
+ var mg=$('mg'),sc=$('scrim'),nav=document.querySelector('nav'),links=[].slice.call(document.querySelectorAll('.nav-links a')),tm;
+ function close(){mg.classList.remove('open');sc.classList.remove('on');links.forEach(function(a){a.classList.remove('act')})}
+ links.forEach(function(a){a.addEventListener('mouseenter',function(){clearTimeout(tm);var k=a.dataset.m;if(!k){close();return}mg.innerHTML='<div class="wrap">'+M[k]+'</div>';mg.classList.add('open');sc.classList.add('on');links.forEach(function(x){x.classList.toggle('act',x===a)})});a.addEventListener('click',function(e){e.preventDefault()})});
+ nav.addEventListener('mouseleave',function(){tm=setTimeout(close,120)});nav.addEventListener('mouseenter',function(){clearTimeout(tm)});
+ document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+
+ // --- carousel arrows
+ [].forEach.call(document.querySelectorAll('.arr[data-for]'),function(w){var t=$(w.dataset.for),b=w.children;
+  function upd(){b[0].disabled=t.scrollLeft<4;b[1].disabled=t.scrollLeft+t.clientWidth>=t.scrollWidth-4}
+  b[0].onclick=function(){t.scrollBy({left:-t.firstElementChild.offsetWidth-24,behavior:'smooth'})};
+  b[1].onclick=function(){t.scrollBy({left:t.firstElementChild.offsetWidth+24,behavior:'smooth'})};
+  t.addEventListener('scroll',upd);setTimeout(upd,60);window.addEventListener('resize',upd)});
+
+ // --- brand stories (swap each card background for a <video> poster/clip if you have them)
+ var B=[['verifone','32','global sites launched in 10 days','With Webflow, we’re not just keeping up, we’re setting the pace. It’s the speedboat that’s helping us move faster than ever before.','Rob Alfano','VP of Digital Marketing','#4a6fa8'],
+  ['Lattice','20%','Increase in site-wide conversion','With Webflow, we’ve significantly improved organic traffic, SEO, and conversions. From my perspective as CMO, that’s a huge win because our brand is reaching more people.','Elizabeth Walton Egan','CMO','#1f5a45'],
+  ['orangetheory','$6M','in cost savings annually','We’re saving upwards of $6 million a year with Webflow, and we’ve reinvested those savings in other areas like website optimization and localization… that’s been really powerful.','Malcolm Greene','Chief Information Officer','#7a7a68'],
+  ['Fivetran','98%','Increase in speed to market','With Webflow Enterprise, we’ve been able to move with trust and confidence that things will get done quickly without compromising quality.','Name Placeholder','Title','#b8902a'],
+  ['WALKER & DUNLOP','5%','increase in form fills','Webflow empowers us to do what we do best: marketers, designers, and content creators. It takes away the technical complexity and unleashes us to be creative.','Name Placeholder','Title','#6a6a70'],
+  ['NCR VOYIX','10x','cost savings in agency fees','Building the web is no longer rigid — it’s a more fluid, collaborative process that allows for faster, better work.','Name Placeholder','Title','#2a2a30'],
+  ['docusign','1,170%','increase in traffic YoY','Webflow doesn’t just allow you to work faster and easier, but differently. Speed is huge, but once you get engineers, designers, and copywriters to really enjoy working together…','Name Placeholder','Title','#a88a6a']];
+ $('brT').innerHTML=B.map(function(c){return '<article class="bc" style="background:linear-gradient(160deg,'+c[6]+',#111)"><div class="lg">'+c[0]+'</div><div class="tx"><div class="n">'+c[1]+'</div><div class="l">'+c[2]+'</div><q>'+c[3]+'</q><div class="w">'+c[4]+'<small>'+c[5]+'</small></div></div><span class="pl">▶</span></article>'}).join('');
+
+ // --- FAQ (one open at a time)
+ var Q=[['What’s the difference between Webflow Enterprise and standard Webflow plans?','<p>Along with everything included in standard plans, <b>Enterprise plans provide the scale, collaboration tools, security, and support that large organizations need</b>, including:</p><ul><li>Higher bandwidth, flexible pricing, and pooled product usage across teams</li><li>Page branching, publishing workflows, and custom roles for complex collaboration</li><li>SSO, SCIM, and SOC 2 Type II compliance for enterprise IT requirements</li><li>A dedicated CSM, onboarding support, and Enterprise SLAs</li></ul>'],
+  ['How does Webflow Enterprise handle security and compliance for large organizations?','<p>Webflow Enterprise meets strict enterprise security requirements with SOC 2 Type II certification, SSO integration, and automated user provisioning via SCIM and JIT.</p><p>Sites are protected by AWS- and Cloudflare-powered DDoS mitigation, TLS/SSL, traffic encryption, and optional custom SSL certificates and security headers. An audit log API lets you pipe key events — like login activity and role changes — into your SIEM tools, and a Site Activity log tracks all site changes.</p>'],
+  ['Can Webflow Enterprise integrate with our existing enterprise tools and custom APIs?','<p>Yes. Webflow Enterprise supports native integrations directly in the Designer so marketers can easily connect existing tools — like HubSpot, Marketo, and Google Analytics — without engineering support.</p><p>For deeper customization, Webflow’s robust, MACH-aligned API platform lets engineering teams build custom integrations, automations, and enterprise workflows.</p>'],
+  ['What kind of dedicated support does Webflow Enterprise provide?','<p>Enterprise plans include a dedicated Customer Success Manager, tailored onboarding through Webflow University Pro, and access to technical consulting with Webflow Solutions Architects for more complex needs.</p><p>Enterprise customers also get priority support through a dedicated queue, and can engage Certified Webflow Partners for additional expertise. <a href="#">Click here to learn more about how Webflow supports Enterprise teams.</a></p>'],
+  ['How scalable is Webflow Enterprise for high-traffic sites and multiple teams?','<p>Webflow Enterprise is hosted on AWS and delivered through Cloudflare’s global CDN, with automatic traffic scaling, sub-50ms global reach, and 99.99% uptime SLAs. And built-in performance features like global caching, automatic image optimization, and DDoS protection keep sites fast even during traffic spikes.</p><p>For teams, the Webflow platform supports multiple sites within a single Workspace, plus features like shared design system libraries, page branching, custom roles, and publishing workflows to maintain quality at scale.</p><p>Enterprise customers like <b>Fivetran</b> (130+ pages launched in a year) and <b>Nursa</b> (~40,000 pages migrated in 19 days) show what’s possible at scale with Webflow.</p>']];
+ var fq=$('faq');fq.innerHTML=Q.map(function(q){return '<div class="fi"><button class="fq-q" aria-expanded="false">'+q[0]+'<i>+</i></button><div class="fq-a"><div>'+q[1]+'</div></div></div>'}).join('');
+ [].forEach.call(fq.children,function(it){it.firstChild.addEventListener('click',function(){var open=!it.classList.contains('on');[].forEach.call(fq.children,function(o){o.classList.remove('on');o.firstChild.lastChild.textContent='+';o.firstChild.setAttribute('aria-expanded','false')});if(open){it.classList.add('on');it.firstChild.lastChild.textContent='−';it.firstChild.setAttribute('aria-expanded','true')}})});
+
+ // --- resources
+ var R=[['Webinar','The technical truth about AI visibility','Watch webinar','#f2c88a,#7fb0ff'],['Webinar','Building AI workflows with Webflow MCP 2.0','Watch webinar','#bcd2ff,#2e6ff0'],['Ebook','Your job hasn’t changed. The world has.','Read ebook','#1a3fa0,#6aa0ff'],['Webinar','Governing the agentic web','Watch webinar','#f6c27a,#e88a4a'],['Ebook','From AI discovery to revenue: the AEO playbook for marketing teams','Read ebook','#0d2a8a,#3a7bff'],['Webinar','How CMOs are rethinking marketing in the AI era','Watch webinar','#e8a07a,#7fb0ff'],['Webinar','Building AEO systems that scale','Watch webinar','#cdb8ff,#6aa0ff']];
+ $('rsT').innerHTML=R.map(function(r){return '<article class="rc" style="--g:linear-gradient(120deg,'+r[3]+')"><div class="in"><div class="tg">'+r[0].toUpperCase()+'S</div><h4>'+r[1]+'</h4><a href="#">'+r[2]+' →</a></div></article>'}).join('');
+
+ // --- demo stack
+ var S=[['Lattice','#f6f3ee','#111','People + AI: Succeeding Together','radial-gradient(circle at 30% 40%,#3a4a66,transparent 60%),#10131c'],
+  ['Walker & Dunlop','#0f1f3d','#fff','Creating Communities Where People Live, Work, Shop, and Play','radial-gradient(circle at 60% 40%,#2a3a5a,transparent 60%),#0b0f18'],
+  ['Ramp','#fff','#0b1020','Time is money. Save both.','radial-gradient(circle at 50% 60%,#3a6ab0,transparent 60%),#0a0e18'],
+  ['Docusign Brand','#1a0f3a','#fff','Brand Guidelines','radial-gradient(circle at 50% 40%,#7a3ad0,transparent 60%),#0c0818'],
+  ['Orangetheory','#f4eadb','#111','Burn Fat. Build Muscle.','radial-gradient(circle at 50% 80%,#c8641a,transparent 60%),#150c06']];
+ var st=$('stage'),cur=0;
+ st.innerHTML=S.map(function(s){return '<div class="sl" style="background:'+s[1]+';color:'+s[2]+'"><small>'+s[0]+'</small>'+s[3]+'</div>'}).join('');
+ function stack(){[].forEach.call(st.children,function(el,i){var p=(i-cur+S.length)%S.length;el.style.transform='translateY('+(-p*30)+'px) scale('+(1-p*.045)+')';el.style.zIndex=20-p;el.style.opacity=p>3?0:1;el.style.pointerEvents=p?'none':'auto'});
+  $('dmCap').textContent=S[cur][0];$('dmBg').style.setProperty('--bgc',S[cur][4])}
+ $('dmNext').onclick=function(){cur=(cur+1)%S.length;stack()};$('dmPrev').onclick=function(){cur=(cur-1+S.length)%S.length;stack()};stack();
+
+ // --- footer
+ var F=[[['Source by Webflow',['Research preview']],['Product',['Platform','Design','Edit content','Interactions','GSAP','Page building','Shared Libraries','Collaboration','CMS','Hosting','Localize','Security','Ecommerce','Analyze','Optimize','SEO','MCP|new','AEO|new','Webflow Cloud','DevLink|Labs','Figma to Webflow|Labs','Accessibility','AI']]],
+  [['Solutions',['Enterprise','Global alliances','Agencies','Freelancers']],['Resources',['University','Blog','Customer stories','Webinars & ebooks','Apps','Libraries','Templates','Developers','Made in Webflow','Glossary','Livestreams','The Webflow Way','Business Value Calculator']]],
+  [['Company',['About','Careers|We’re hiring!','Press','Webflow Ventures','Webflow Shop','Terms of Service','Privacy policy','Cookie policy','Accessibility statement']],['Compare',['Contentful','Framer','Sitecore','Wix','WordPress']]],
+  [['Community',['Discover the community','Partner with Webflow','Certified Partners','Become a template designer','Become an affiliate','Become a Global Leader','Find a meetup near you']],['Get help',['Support','Pricing','Status','Community Homebase','Wishlist']]]];
+ $('ftCols').innerHTML=F.map(function(col){return '<div>'+col.map(function(g){return '<div class="gp"><h4>'+g[0]+'</h4><ul>'+g[1].map(function(x){var p=x.split('|');return '<li><a href="#">'+p[0]+'</a>'+(p[1]?'<em>'+p[1].toUpperCase()+'</em>':'')+'</li>'}).join('')+'</ul></div>'}).join('')+'</div>'}).join('');
+
+ // --- big W: hover reveals media clipped to the logo shape
+ var W=[['Duracell Coppertop Optimum','linear-gradient(120deg,#8a8a8e,#b8641e 55%,#4a2208)'],['Together','linear-gradient(160deg,#3a1fd0,#1a0a60 70%)'],['Bli…','linear-gradient(160deg,#d83a3a,#a01a1a)'],['','repeating-linear-gradient(90deg,#fff 0 24px,#7fe0d8 24px 48px)'],['take time','linear-gradient(160deg,#f2542a,#f09a1a)']];
+ var fw=$('ftW'),wi=-1,wt;
+ fw.innerHTML=W.map(function(w){return '<div class="wsl" style="background:'+w[1]+'">'+w[0]+'<div class="pr">01<i></i>02</div></div>'}).join('');
+ function show(){wi=(wi+1)%W.length;[].forEach.call(fw.children,function(c,i){c.classList.toggle('cur',i===wi)})}
+ fw.addEventListener('mouseenter',function(){fw.classList.add('on');show();wt=setInterval(show,3000)});
+ fw.addEventListener('mouseleave',function(){fw.classList.remove('on');clearInterval(wt)});
+})();
+</script>
+<script>
+/* applies the links from window.IMG to the page, no need to edit below */
+(function(){
+ var I=window.IMG||{};
+ function mk(u){var v=/\.(mp4|webm|mov)(\?|$)/i.test(u),e=document.createElement(v?'video':'img');e.src=u;e.className='mi';
+  if(v){e.muted=true;e.loop=true;e.autoplay=true;e.playsInline=true;e.setAttribute('playsinline','');e.play&&e.play().catch(function(){})}else{e.alt=''}return e}
+ function put(host,u,o){if(!host)return;o=o||{};var old=host.querySelector(':scope > .mi');if(old)old.remove();host.classList.remove('hide-ph');
+  if(!u)return;var e=mk(u);if(o.first)host.insertBefore(e,host.firstChild);else host.appendChild(e);if(o.hide)host.classList.add('hide-ph')}
+ function each(sel,arr,o){var n=document.querySelectorAll(sel);(arr||[]).forEach(function(u,i){put(n[i],u,o)})}
+ each('.hero .pic',I.hero,{hide:1});
+ each('#hosting .ly',I.hosting,{hide:1});
+ each('#ext .ly',I.extensibility,{hide:1});
+ each('.bc',I.brands,{first:1});
+ each('.cd .mk',I.promo,{hide:1});
+ each('.rc',I.resources,{first:1});
+ each('#stage .sl',I.demo,{hide:1});
+ each('#ftW .wsl',I.footerW,{first:1,hide:1});
+ if(I.logos&&I.logos.length){var t=document.getElementById('track'),h=I.logos.map(function(u){return '<img src="'+u+'" alt="">'}).join('');t.innerHTML=h+h}
+ window.pfImgs=function(k){var a=(I.platform||{})[k]||[];['.pf-v1','.pf-v2','.pf-v3'].forEach(function(c,i){put(document.querySelector(c),a[i],{hide:1})})};
+ window.pfImgs(document.getElementById('pf').dataset.t);
+})();
+</script>
+</body>
+</html>

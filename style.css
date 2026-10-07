@@ -1863,3 +1863,276 @@ input:focus{
   .left h1{font-size:26px}
   .left p{font-size:14px}
 }
+/* =====================================================================
+   FIXES — paste this whole block at the VERY BOTTOM of style.css
+   (it overrides the older rules above it, so you don't have to delete them)
+   Sizes were measured from your video at a 1920px-wide screen.
+   Change a number here and the page updates — each line says what it controls.
+   ===================================================================== */
+:root{
+  --blue:#146EF5;      /* main blue (buttons, links on hover) */
+  --line:#1f1f1f;      /* thin divider lines */
+  --wrap:1440px;       /* page content width: change this to make the whole page narrower/wider */
+}
+body{font-family:"Inter Tight","Helvetica Neue",Arial,sans-serif;background:#050505;-webkit-font-smoothing:antialiased}
+
+/* ---------- 0. old .container was styled for the nav and broke the other sections ---------- */
+.container{height:auto;background:none}
+
+/* STICKY-NAV FIX: your old CSS had  overflow-x:hidden  on html AND body, which silently switches sticky OFF.
+   'clip' hides sideways overflow the same way but keeps sticky working. */
+html,body{overflow-x:clip!important}
+
+/* ---------- 1. NAV ---------- */
+.everything-up{display:contents}                       /* lets the nav stay stuck to the top while you scroll */
+.announcement{height:45px;display:flex;align-items:center;justify-content:center;padding:0 16px;font-size:14px;font-weight:500}
+.nav-container{position:sticky;
+  top:0;z-index:100;
+  height:66px;padding:0 24px;
+  text-align:center;background:#08080A;border-bottom:1px solid var(--line)}
+.nav-bar{max-width:var(--wrap);margin:0 auto;display:flex;justify-content:space-between}
+.nav-second{height:100%;display:flex;text-align: center; align-items:center;gap:25px}
+.nav-second>div{height:100%;display:flex;align-items:center}   /* makes the hover area reach the menu below */
+.nav-second a{font-size:16px;font-weight:500;padding:0}
+.logo{height:24px;margin-right:6px}
+.nav-third{display:flex;align-items:center;gap:29px}
+.end-1{font-size:16px;font-weight:500}
+.signup-btn{display:inline-flex;align-items:center;height:51px;padding:0 24px;background:var(--blue);border:0;border-radius:4px;color:#fff;font-size:16px;font-weight:500;transition:filter .2s}
+.signup-btn:hover{color:#fff;filter:brightness(1.15)}
+
+/* ---------- 2. DROP-DOWN MENUS (Platform / Solutions / Resources) ---------- */
+.all-plat,.all-solu,.all-reso{
+  top:100%;                                            /* sits right under the nav */
+  background:#0b0b0b;border-bottom:1px solid var(--line);
+  padding:48px max(24px,calc((100% - 1392px)/2)) 0;   /* lines up with the logo */
+  grid-template-columns:repeat(4,1fr);gap:0 24px;z-index:99}
+.head{font-size:14px;font-weight:500;color:#8a8a8a;margin-bottom:18px}
+.all-plat ul li,.all-solu ul li,.all-reso ul li{margin-bottom:19px}
+.all-plat ul li a,.all-solu ul li a,.all-reso ul li a{font-size:20px;font-weight:500;line-height:28px}
+.mega-bottom{margin-top:6px}
+.promo{padding:22px 0;min-height:110px}
+.promo h3,.solu-4 button a h2{font-size:24px;margin:0 0 6px 24px}
+.promo p,.solu-4 button a p{font-size:14px;margin-left:24px}
+.solu-4 button a{padding:22px 0}
+/* the "I'm a Marketer ... Appearance" bar at the bottom of each menu */
+.mega-bar{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #222;margin-top:36px;padding:16px 0;font-size:14px;color:#ddd}
+.mega-bar .role{border:1px solid #2c2c2c;background:#161616;border-radius:4px;padding:6px 12px;margin-left:12px;color:#fff}
+.mega-bar .ic{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#1b1b1b;border:1px solid #2c2c2c;margin-left:10px;font-size:13px}
+.mega-bar .ic.on{background:var(--blue);border-color:var(--blue)}
+/* dark overlay over the page while a menu is open (no JS needed) */
+.nav-container::after{content:"";position:fixed;left:0;right:0;top:66px;bottom:0;background:rgba(0,0,0,.75);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s;z-index:-1}
+.nav-container:has(.plat:hover,.solu:hover,.reso:hover)::after{opacity:1;visibility:visible}
+
+/* ---------- 3. HERO ---------- */
+.hero{padding:84px max(24px,calc((100% - 1392px)/2)) 40px;border:0}
+.hero h1{font-size:72px;font-weight:700;letter-spacing:-.04em;line-height:1}
+.hero p{font-size:16px;line-height:1.6;font-weight:500;margin-top:24px}
+.hero .btn{display:inline-flex;align-items:center;height:52px;padding:0 24px;border-radius:4px;font-size:16px;font-weight:500}
+.wf-grey{background:#1a1a1a}.wf-grey:hover{background:#2a2a2a}
+.hero .align-self-lg-end{font-size:16px;font-weight:500}
+.pill{border:1px solid #2c2c2c;background:#0b0b0b;border-radius:4px;padding:4px 8px;font-size:16px;font-weight:500;margin:0 4px}
+/* scrolling cards: faded edges, no boxes, centred captions */
+.marquee{margin-top:90px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent)}
+.btnn{background:none;border:0;padding:0}
+.btnn:hover{border:0;padding:0;color:#fff}
+.btnn p{font-size:16px;font-weight:600;text-align:center;margin-top:16px;color:#fff;white-space:normal}
+.m1-card img,.m2-card img,.m3-card img,.m4-card img,.m5-card img,.m6-card img,.m7-card img,.m8-card img{border:0;padding:0}
+
+/* ---------- 4. SPACING + LOGO WALL ---------- */
+.logo-q{max-width:none;padding:60px max(24px,calc((100% - 1392px)/2)) 20px}
+.brands{padding:120px 0}
+.container-b{max-width:var(--wrap);padding:0 24px}
+.carousel-viewport{padding-left:max(24px,calc((100% - 1392px)/2))}
+.carousel-track{gap:24px}                               /* if you change this, change the "+ 24" in your carousel JS too */
+.card{width:540px;height:800px}
+
+/* ---------- 5. #MadeinWebflow slanted cards ---------- */
+.made-section{padding:120px 0}
+.made-track{padding:120px 24px;align-items:flex-start;perspective:none;gap:4px}
+.made-card{flex:0 0 305px;height:520px;aspect-ratio:auto;transform:skewY(28deg);transform-origin:center}   /* 28deg = the slant; try 20-35 */
+.made-track:hover .made-card{opacity:.35;filter:grayscale(60%)}
+.made-track:hover .made-card:hover{opacity:1;filter:none}
+
+/* ---------- 6. FOOTER ---------- */
+.footer{position:relative;border-top:1px solid var(--line);padding:90px 0 0}
+.footer-grid{max-width:var(--wrap);padding:0 24px;gap:0 40px}
+.col h4{font-size:20px;margin:44px 0 12px}
+.col h4:first-child{margin-top:0}
+.col a{font-size:16px;line-height:2.5;color:#a8a8a8}
+.footer .badge{background:none;color:var(--blue);font-size:10px;text-transform:uppercase;padding:0;margin-left:8px;vertical-align:middle}
+.footer-bottom{display:block;max-width:var(--wrap);margin:70px auto 0;padding:0 24px 40px;position:static}
+.copyright p{font-size:14px;color:#b9b9b9;margin-bottom:22px}
+.socials{font-size:14px;letter-spacing:16px;color:#cfcfcf}
+
+/* the big W: blue by default, shows your pictures/video inside it on hover */
+.big-w{
+  position:absolute;bottom:0;
+  width:70px;height:70px;                             /* SIZE: 35vw = 35% of the screen width. Smaller W? lower both (keep height = width x 0.637) */
+  background:var(--blue);cursor:pointer;overflow:hidden;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 14' preserveAspectRatio='none'%3E%3Cpath d='M22 0 15 14H8.4l2.9-5.8H11C9.4 10.4 7 12.6 3.6 14H0L5.2 0h6.1L8.7 5.4H9C10.3 3.4 12.4 1.5 15.8 0z'/%3E%3C/svg%3E") 0 0/100% 100% no-repeat;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 14' preserveAspectRatio='none'%3E%3Cpath d='M22 0 15 14H8.4l2.9-5.8H11C9.4 10.4 7 12.6 3.6 14H0L5.2 0h6.1L8.7 5.4H9C10.3 3.4 12.4 1.5 15.8 0z'/%3E%3C/svg%3E") 0 0/100% 100% no-repeat}
+.w-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0}
+/* slideshow: each of the 5 pictures shows for 3 seconds while hovering (15s loop). Change 15s / 3s if you add or remove pictures */
+.big-w:hover .w-slide{animation:wfade 15s infinite}
+.big-w:hover .w-slide:nth-child(2){animation-delay:3s}
+.big-w:hover .w-slide:nth-child(3){animation-delay:6s}
+.big-w:hover .w-slide:nth-child(4){animation-delay:9s}
+.big-w:hover .w-slide:nth-child(5){animation-delay:12s}
+@keyframes wfade{0%{opacity:0}4%{opacity:1}20%{opacity:1}24%{opacity:0}100%{opacity:0}}
+@media(max-width:1024px){.big-w{position:relative;right:auto;width:60vw;height:38.2vw;margin:40px 24px 0}}
+
+/* ---------- 7. MOBILE (replaces the old nav rules that used .container) ---------- */
+@media(max-width:768px){
+  .nav-bar{height:60px;padding:0 16px}
+  .nav-second,.nav-third .end-1,.nav-third .signup-btn{display:none}
+  .hero{padding:40px 16px}
+  .hero h1{font-size:40px}
+  .made-card{flex:0 0 220px;height:360px}
+}
+
+/* =====================================================================
+   FIXES — paste this whole block at the VERY BOTTOM of style.css
+   (it overrides the older rules above it, so you don't have to delete them)
+   Sizes were measured from your video at a 1920px-wide screen.
+   Change a number here and the page updates — each line says what it controls.
+   ===================================================================== */
+:root{
+  --blue:#146EF5;      /* main blue (buttons, links on hover) */
+  --line:#1f1f1f;      /* thin divider lines */
+  --wrap:1440px;       /* page content width: change this to make the whole page narrower/wider */
+}
+/* every element (body, nav, everything) counts padding + border INSIDE its width, so nothing overflows */
+html{box-sizing:border-box}
+*,*::before,*::after{box-sizing:inherit}
+body,nav,.nav-container,.nav-bar{box-sizing:border-box}
+body{font-family:"Inter Tight","Helvetica Neue",Arial,sans-serif;background:#050505;-webkit-font-smoothing:antialiased}
+
+/* ---------- 0. old .container was styled for the nav and broke the other sections ---------- */
+.container{height:auto;background:none}
+
+/* STICKY-NAV FIX: your old CSS had  overflow-x:hidden  on html AND body, which silently switches sticky OFF.
+   'clip' hides sideways overflow the same way but keeps sticky working. */
+html,body{overflow-x:clip!important}
+
+/* ---------- 1. NAV ---------- */
+.everything-up{display:contents}                       /* lets the nav stay stuck to the top while you scroll */
+.announcement{height:45px;display:flex;align-items:center;justify-content:center;padding:0 16px;font-size:14px;font-weight:500}
+.nav-container{position:sticky;top:0;z-index:100;background:#08080A;border-bottom:1px solid var(--line)}
+.nav-bar{max-width:var(--wrap);margin:0 auto;height:66px;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+.nav-second{height:100%;display:flex;align-items:center;gap:25px}
+.nav-second>div{height:100%;display:flex;align-items:center}   /* makes the hover area reach the menu below */
+.nav-second a{font-size:16px;font-weight:500;padding:0}
+.logo{height:24px;margin-right:6px}
+.nav-third{display:flex;align-items:center;gap:29px}
+.end-1{font-size:16px;font-weight:500}
+.signup-btn{display:inline-flex;align-items:center;height:40px;padding:0 18px;background:var(--blue);border:0;border-radius:4px;color:#fff;font-size:15px;font-weight:500;transition:filter .2s}
+.signup-btn:hover{color:#fff;filter:brightness(1.15)}
+
+/* ---------- 2. DROP-DOWN MENUS (Platform / Solutions / Resources) ---------- */
+.all-plat,.all-solu,.all-reso{
+  top:100%;                                            /* sits right under the nav */
+  background:#0b0b0b;border-bottom:1px solid var(--line);
+  padding:48px max(24px,calc((100% - 1392px)/2)) 0;   /* lines up with the logo */
+  grid-template-columns:repeat(4,1fr);gap:0 24px;z-index:99}
+.head{font-size:14px;font-weight:500;color:#8a8a8a;margin-bottom:18px}
+.all-plat ul li,.all-solu ul li,.all-reso ul li{margin-bottom:19px}
+.all-plat ul li a,.all-solu ul li a,.all-reso ul li a{font-size:20px;font-weight:500;line-height:28px}
+.mega-bottom{margin-top:6px}
+.promo{padding:22px 0;min-height:110px}
+.promo h3,.solu-4 button a h2{font-size:24px;margin:0 0 6px 24px}
+.promo p,.solu-4 button a p{font-size:14px;margin-left:24px}
+.solu-4 button a{padding:22px 0}
+/* the "I'm a Marketer ... Appearance" bar at the bottom of each menu */
+.mega-bar{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #222;margin-top:36px;padding:16px 0;font-size:14px;color:#ddd}
+.mega-bar .role{border:1px solid #2c2c2c;background:#161616;border-radius:4px;padding:6px 12px;margin-left:12px;color:#fff}
+.mega-bar .ic{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#1b1b1b;border:1px solid #2c2c2c;margin-left:10px;font-size:13px}
+.mega-bar .ic.on{background:var(--blue);border-color:var(--blue)}
+/* dark overlay over the page while a menu is open (no JS needed) */
+.nav-container::after{content:"";position:fixed;left:0;right:0;top:66px;bottom:0;background:rgba(0,0,0,.75);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s;z-index:-1}
+.nav-container:has(.plat:hover,.solu:hover,.reso:hover)::after{opacity:1;visibility:visible}
+
+/* ---------- 3. HERO ---------- */
+.hero{padding:84px max(24px,calc((100% - 1392px)/2)) 40px;border:0}
+.hero h1{font-size:72px;font-weight:700;letter-spacing:-.04em;line-height:1}
+.hero p{font-size:16px;line-height:1.6;font-weight:500;margin-top:24px}
+.hero .btn{display:inline-flex;align-items:center;height:52px;padding:0 24px;border-radius:4px;font-size:16px;font-weight:500}
+.wf-grey{background:#1a1a1a}.wf-grey:hover{background:#2a2a2a}
+.hero .align-self-lg-end{font-size:16px;font-weight:500}
+.pill{border:1px solid #2c2c2c;background:#0b0b0b;border-radius:4px;padding:4px 8px;font-size:16px;font-weight:500;margin:0 4px}
+/* scrolling cards: faded edges, no boxes, centred captions */
+.marquee{margin-top:90px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent)}
+.btnn{background:none;border:0;padding:0}
+.btnn:hover{border:0;padding:0;color:#fff}
+.btnn p{font-size:16px;font-weight:600;text-align:center;margin-top:16px;color:#fff;white-space:normal}
+.m1-card img,.m2-card img,.m3-card img,.m4-card img,.m5-card img,.m6-card img,.m7-card img,.m8-card img{border:0;padding:0}
+
+/* ---------- 4. SPACING + LOGO WALL ---------- */
+.logo-q{max-width:none;padding:60px max(24px,calc((100% - 1392px)/2)) 20px}
+.brands{padding:120px 0}
+.container-b{max-width:var(--wrap);padding:0 24px}
+.carousel-viewport{padding-left:max(24px,calc((100% - 1392px)/2))}
+.carousel-track{gap:24px}                               /* if you change this, change the "+ 24" in your carousel JS too */
+.card{width:540px;height:800px}
+
+/* ---------- 5. #MadeinWebflow slanted cards ---------- */
+.made-section{padding:120px 0}
+.made-track{padding:120px 24px;align-items:flex-start;perspective:none;gap:4px}
+.made-card{flex:0 0 305px;height:520px;aspect-ratio:auto;transform:skewY(28deg);transform-origin:center}   /* 28deg = the slant; try 20-35 */
+.made-track:hover .made-card{opacity:.35;filter:grayscale(60%)}
+.made-track:hover .made-card:hover{opacity:1;filter:none}
+
+/* ---------- 6. FOOTER ---------- */
+.footer{position:relative;border-top:1px solid var(--line);padding:90px 0 0}
+.footer-grid{max-width:var(--wrap);padding:0 24px;gap:0 40px}
+.col h4{font-size:20px;margin:44px 0 12px}
+.col h4:first-child{margin-top:0}
+.col a{font-size:16px;line-height:2.5;color:#a8a8a8}
+.footer .badge{background:none;color:var(--blue);font-size:10px;text-transform:uppercase;padding:0;margin-left:8px;vertical-align:middle}
+.footer-bottom{display:block;max-width:var(--wrap);margin:70px auto 0;padding:0 24px 40px;position:static}
+.copyright p{font-size:14px;color:#b9b9b9;margin-bottom:22px}
+.socials{font-size:14px;letter-spacing:16px;color:#cfcfcf}
+
+/* the big W: blue by default, your pictures show inside it on hover. It sits in the bottom-right corner of the footer. */
+.footer{position:relative;overflow:hidden;--w-width:300px;--w-right:5vw}
+/*   ^^^ --w-width = how wide the W is (its height follows automatically). Change this ONE number to resize it.
+       --w-right = gap from the right edge of the screen (0 = touching the edge)                                  */
+.footer-bottom{min-height:calc(var(--w-width) * .64)}   /* keeps free space so the W never covers the text */
+.big-w{
+  position:absolute;right:var(--w-right);bottom:0;      /* bottom-right corner */
+  width:var(--w-width);aspect-ratio:22/14;height:auto;
+  background:var(--blue);cursor:pointer;overflow:hidden;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 14' preserveAspectRatio='none'%3E%3Cpath d='M22 0 15 14H8.4l2.9-5.8H11C9.4 10.4 7 12.6 3.6 14H0L5.2 0h6.1L8.7 5.4H9C10.3 3.4 12.4 1.5 15.8 0z'/%3E%3C/svg%3E") 0 0/100% 100% no-repeat;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 14' preserveAspectRatio='none'%3E%3Cpath d='M22 0 15 14H8.4l2.9-5.8H11C9.4 10.4 7 12.6 3.6 14H0L5.2 0h6.1L8.7 5.4H9C10.3 3.4 12.4 1.5 15.8 0z'/%3E%3C/svg%3E") 0 0/100% 100% no-repeat;
+}
+.w-slide{position:absolute;inset:0;opacity:0;background-size:cover;background-position:center;background-repeat:no-repeat}
+
+/* =====================================================================
+   >>> PASTE YOUR 5 FOOTER IMAGE LINKS HERE <<<
+   Replace the text between the quotes with your link, for example:
+   url("https://your-site.com/photo.jpg")   or   url("./webflow images/footer1.jpg")
+   They show in this order, 3 seconds each, while the mouse is over the W.
+   ===================================================================== */
+.w-slide:nth-child(1){background-image:url("https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/68b89b6bc974abdca78db913_interactions_miw-slider_cloneable-asset_08.webp")}
+.w-slide:nth-child(2){background-image:url("https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/68b9a05cd703a66b0e92c61d_design_miw_sites_02.avif")}
+.w-slide:nth-child(3){background-image:url("https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/68b8544804f09c2ea80de421_d9be4457075c7b43f46648f9470ebe50_interactions-hero-09.avif")}
+.w-slide:nth-child(4){background-image:url("https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/68b9a05cc4e511863b3de078_design_miw_sites_04.avif")}
+.w-slide:nth-child(5){background-image:url("https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/68b8544827ddb0ac640381e8_2f37143fccefde0915d24c72a5a15da7_interactions-hero-05.avif")}
+/* ===================================================================== */
+
+/* slideshow: each picture shows 3 seconds while hovering (15s loop = 5 pictures x 3s) */
+.big-w:hover .w-slide{animation:wfade 15s infinite}
+.big-w:hover .w-slide:nth-child(2){animation-delay:3s}
+.big-w:hover .w-slide:nth-child(3){animation-delay:6s}
+.big-w:hover .w-slide:nth-child(4){animation-delay:9s}
+.big-w:hover .w-slide:nth-child(5){animation-delay:12s}
+@keyframes wfade{0%{opacity:0}4%{opacity:1}20%{opacity:1}24%{opacity:0}100%{opacity:0}}
+@media(max-width:1024px){.footer{--w-width:200px;--w-right:16px}}
+
+/* ---------- 7. MOBILE (replaces the old nav rules that used .container) ---------- */
+@media(max-width:768px){
+  .nav-bar{height:60px;padding:0 16px}
+  .nav-second,.nav-third .end-1,.nav-third .signup-btn{display:none}
+  .hero{padding:40px 16px}
+  .hero h1{font-size:40px}
+  .made-card{flex:0 0 220px;height:360px}
+}
